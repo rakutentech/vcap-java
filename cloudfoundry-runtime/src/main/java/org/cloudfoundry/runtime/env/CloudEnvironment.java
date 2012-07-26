@@ -45,11 +45,11 @@ public class CloudEnvironment {
 	}
 
 	static {
-		labelledServiceType(RdbmsServiceInfo.class, "mysql-5.1");
-		labelledServiceType(RdbmsServiceInfo.class, "postgresql-9.0");
-		labelledServiceType(RedisServiceInfo.class, "redis-2.2");
-		labelledServiceType(MongoServiceInfo.class, "mongodb-1.8");
-		labelledServiceType(RabbitServiceInfo.class, "rabbitmq-2.4");
+		labelledServiceType(RedisServiceInfo.class, "redis-2.4.4");
+		labelledServiceType(RedisServiceInfo.class, "redis_small_az1-2.4.4");
+		labelledServiceType(RedisServiceInfo.class, "redis_small_az2-2.4.4");
+		labelledServiceType(RedisServiceInfo.class, "redis_small_az3-2.4.4");
+		labelledServiceType(MongoServiceInfo.class, "mongodb-2.0.1");
 	}
 	
 	/* package for testing purpose */

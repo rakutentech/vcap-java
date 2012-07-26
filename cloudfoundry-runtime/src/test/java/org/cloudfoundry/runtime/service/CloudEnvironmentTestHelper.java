@@ -107,14 +107,14 @@ public class CloudEnvironmentTestHelper {
 			if (payload.length() > 1) {
 				payload.append(",");
 			}
-			payload.append("\"redis-2.2\":");
+			payload.append("\"redis-2.4.4\":");
 			payload.append(getServicePayload(redisServicePayloads));
 		}
 		if (mongodbServicePayloads != null) {
 			if (payload.length() > 1) {
 				payload.append(",");
 			}
-			payload.append("\"mongodb-1.8\":");
+			payload.append("\"mongodb-2.0.1\":");
 			payload.append(getServicePayload(mongodbServicePayloads));
 		}
 		if (rabbitServicePayloads != null) {

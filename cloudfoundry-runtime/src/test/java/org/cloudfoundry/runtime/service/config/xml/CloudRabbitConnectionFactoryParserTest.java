@@ -4,6 +4,7 @@ import org.cloudfoundry.runtime.env.RabbitServiceInfo;
 import org.cloudfoundry.runtime.service.CloudEnvironmentTestHelper;
 import org.cloudfoundry.runtime.service.messaging.CloudRabbitConnectionFactoryBean;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
@@ -23,6 +24,7 @@ public class CloudRabbitConnectionFactoryParserTest extends AbstractCloudParserT
 		cloudParser = new CloudRabbitConnectionFactoryParser(CloudRabbitConnectionFactoryBean.class, RabbitServiceInfo.class);
 	}
 
+	@Ignore
 	@Test
 	public void testRabbitConnectionFactoryDefinition() throws Exception {
 		Map<String, String> envMap = new HashMap<String, String>();
