@@ -1,6 +1,5 @@
 package org.cloudfoundry.runtime.service.relational;
 
-import org.cloudfoundry.runtime.env.CloudEnvironment;
 import org.cloudfoundry.runtime.env.PostgresqlServiceInfo;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,8 +8,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import javax.sql.DataSource;
-
-import java.util.Collections;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;

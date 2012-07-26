@@ -14,7 +14,7 @@ import javax.sql.DataSource;
  */
 public class RdbmsServiceCreator extends AbstractDataSourceCreator<RdbmsServiceInfo> {
 
-	private AbstractDataSourceCreator delegate;
+	private AbstractDataSourceCreator<?> delegate;
 
 	@Override
 	public DataSource createService(AbstractDataSourceServiceInfo serviceInfo) {

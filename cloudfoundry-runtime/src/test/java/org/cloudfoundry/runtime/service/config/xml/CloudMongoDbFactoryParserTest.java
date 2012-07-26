@@ -9,6 +9,7 @@ import org.cloudfoundry.runtime.service.document.CloudMongoDbFactoryBean;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.data.authentication.UserCredentials;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.HashMap;
@@ -42,8 +43,8 @@ public class CloudMongoDbFactoryParserTest extends AbstractCloudParserTest {
 		Object mongoDbFactoryWithOptions = this.appContext.getBean("mongoDbFactoryWithOptions");
 		assertEquals("not the correct class", "org.springframework.data.mongodb.core.SimpleMongoDbFactory", mongoDbFactoryWithOptions.getClass().getName());
 		assertEquals("not the correct databaseName", "468de494984f94e85255ce5d5", ReflectionTestUtils.getField(mongoDbFactoryWithOptions, "databaseName"));
-		assertEquals("not the correct username", "uIKpwGOTgjfaQ", ReflectionTestUtils.getField(mongoDbFactoryWithOptions, "username"));
-		assertEquals("not the correct password", "pu0xEgiy997kQ", ReflectionTestUtils.getField(mongoDbFactoryWithOptions, "password"));
+		assertEquals("not the correct username", "uIKpwGOTgjfaQ", ((UserCredentials)ReflectionTestUtils.getField(mongoDbFactoryWithOptions, "credentials")).getUsername());
+		assertEquals("not the correct password", "pu0xEgiy997kQ", ((UserCredentials)ReflectionTestUtils.getField(mongoDbFactoryWithOptions, "credentials")).getPassword());
 		WriteConcern theFsyncSafeWriteConcern = (WriteConcern) ReflectionTestUtils.getField(mongoDbFactoryWithOptions, "writeConcern");
 		Mongo mongoWithOptions = (Mongo) ReflectionTestUtils.getField(mongoDbFactoryWithOptions, "mongo");
 		assertEquals("not the correct host", "127.0.0.1", mongoWithOptions.getAddress().getHost());

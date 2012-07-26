@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.authentication.UserCredentials;
 import org.springframework.data.mongodb.MongoDbFactory;
 
 public class CloudMongoDbFactoryTest {
@@ -42,8 +43,8 @@ public class CloudMongoDbFactoryTest {
 		MongoDbFactory cloudMongoDbFactory = factory.getObject();
 		assertNotNull(cloudMongoDbFactory);
 		assertEquals("mongo-database-1", getField(cloudMongoDbFactory, "databaseName"));
-		assertEquals("myuser", getField(cloudMongoDbFactory, "username"));
-		assertEquals("mypass", getField(cloudMongoDbFactory, "password"));
+		assertEquals("myuser", ((UserCredentials)getField(cloudMongoDbFactory, "credentials")).getUsername());
+		assertEquals("mypass", ((UserCredentials)getField(cloudMongoDbFactory, "credentials")).getPassword());
 		// TODO: Need a better way to avoid Mongo trying to connect
 	}
 

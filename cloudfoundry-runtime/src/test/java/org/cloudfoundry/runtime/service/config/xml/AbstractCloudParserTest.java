@@ -25,7 +25,7 @@ public abstract class AbstractCloudParserTest {
 		ReflectionTestUtils.setField(env, "environment", new MapEnvironmentAccessor(envMap));
 	}
 
-	protected void loadContext(String fileName, Class relativeLocation, GenericApplicationContext context,
+	protected void loadContext(String fileName, Class<?> relativeLocation, GenericApplicationContext context,
 				final BeanDefinitionParser parser, final String elementName) {
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(context);
 		reader.setNamespaceHandlerResolver(new NamespaceHandlerResolver() {
