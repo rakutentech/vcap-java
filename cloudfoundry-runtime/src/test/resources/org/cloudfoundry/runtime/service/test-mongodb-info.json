@@ -1,6 +1,6 @@
 {
         "name": "$serviceName",
-        "label": "mongodb-2.0.1",
+        "label": "mongodb-$version",
         "plan": "free",
         "credentials": {
             "node_id": "mongodb_node_5",
