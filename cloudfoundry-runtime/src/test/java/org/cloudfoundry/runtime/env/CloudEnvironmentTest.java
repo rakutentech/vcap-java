@@ -251,8 +251,8 @@ public class CloudEnvironmentTest {
 		when(mockEnvironment.getValue("VCAP_APPLICATION")).thenReturn(getApplicationInstanceInfo("foo", "foo.cloudfoundry.com"));
 		when(mockEnvironment.getValue("VCAP_SERVICES")).thenReturn(getServicesPayload(
 			null,
-			new String[]{ getRedisServicePayload("2.2", "mykey", "2.2.0.0", 2200, "redis-password", "redis-name") },
-			new String[]{ getMongoServicePayload("1.8", "mydoc", "1.8.0.0", 1800, "mongodb-username", "mongodb-password", "mongodb-db", "mongodb-name") },
+			new String[]{ getRedisServicePayload("2.4.4", "mykey", "2.2.0.0", 2200, "redis-password", "redis-name") },
+			new String[]{ getMongoServicePayload("2.0.1", "mydoc", "1.8.0.0", 1800, "mongodb-username", "mongodb-password", "mongodb-db", "mongodb-name") },
 			null
 		));
 
@@ -360,8 +360,8 @@ public class CloudEnvironmentTest {
 		when(mockEnvironment.getValue("VCAP_APPLICATION")).thenReturn(getApplicationInstanceInfo("foo", "foo.cloudfoundry.com"));
 		when(mockEnvironment.getValue("VCAP_SERVICES")).thenReturn(getServicesPayload(
 				null,
-				new String[]{ getRedisServicePayload("2.2", "mongodb", hostname, port, "redis-password", "redis-name") },
-				new String[]{ getMongoServicePayload("1.8", "redis", hostname, port, "mongodb-username", "mongodb-password", "mongodb-db", "mongodb-name") },
+				new String[]{ getRedisServicePayload("2.4.4", "mongodb", hostname, port, "redis-password", "redis-name") },
+				new String[]{ getMongoServicePayload("2.0.1", "redis", hostname, port, "mongodb-username", "mongodb-password", "mongodb-db", "mongodb-name") },
 				null
 			));
 
